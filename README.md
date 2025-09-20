@@ -1,21 +1,43 @@
-# Soroban Project
+# ZKP-Toy-RS
 
-## Project Structure
+[![Rust](https://img.shields.io/badge/Rust-1.72.0-blue?logo=rust)](https://www.rust-lang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-This repository uses the recommended structure for a Soroban project:
-```text
-.
-├── contracts
-│   └── hello_world
-│       ├── src
-│       │   ├── lib.rs
-│       │   └── test.rs
-│       └── Cargo.toml
-├── Cargo.toml
-└── README.md
-```
+**Zero-Knowledge Proof Demo in Rust**  
 
-- New Soroban contracts can be put in `contracts`, each in their own directory. There is already a `hello_world` contract in there to get you started.
-- If you initialized this project with any other example contracts via `--with-example`, those contracts will be in the `contracts` directory as well.
-- Contracts should have their own `Cargo.toml` files that rely on the top-level `Cargo.toml` workspace for their dependencies.
-- Frontend libraries can be added to the top-level directory as well. If you initialized this project with a frontend template via `--frontend-template` you will have those files already included.
+A lightweight Rust library demonstrating **Schnorr-style non-interactive zero-knowledge proofs (ZKP)**.  
+It allows proving knowledge of a secret scalar without revealing it, simulating a simple blockchain “seller network”.
+
+---
+
+## 🔹 Features
+
+- Schnorr-style **zero-knowledge proofs** on the Ristretto255 curve.
+- Non-interactive proofs using the **Fiat-Shamir heuristic**.
+- Modular design:
+  - `lib.rs` =  core cryptographic logic.
+  - `test.rs` = prover-verifier demo.
+- Cryptographically secure random number generation with `OsRng`.
+- Base64 encoding/decoding and JSON serialization (`serde`, `base64`).
+- Deterministic proof verification.
+- Easily extendable for blockchain and cryptography projects.
+
+---
+
+##  Tech Stack
+
+- **Language:** Rust (Edition 2021)  
+- **Crypto Libraries:** `curve25519-dalek`, `sha2`  
+- **Serialization:** `serde`, `base64`  
+- **Randomness:** `rand` (cryptographically secure RNG)  
+- **Build:** Cargo  
+
+---
+
+## ⚡ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/sau0004s/ZKP_Rust_Project.git
+cd ZKP_Rust_Project
