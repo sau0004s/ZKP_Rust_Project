@@ -18,8 +18,8 @@ fn main() {
 
     // Verifier checks the proof
     match verify_proof(&pub_b64, &commit_b64, &response_hex, message) {
-        Ok(true) => println!("Proof verified: ACCEPTED ✅"),
-        Ok(false) => println!("Proof verified: REJECTED ❌"),
+        Ok(true) => println!("Proof verified: ACCEPTED "),
+        Ok(false) => println!("Proof verified: REJECTED "),
         Err(e) => println!("Error verifying proof: {}", e),
     }
 }
